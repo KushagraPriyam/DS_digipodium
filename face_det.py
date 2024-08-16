@@ -12,6 +12,8 @@ cap = cv2.VideoCapture(0)
 with mp_face_detection.FaceDetection(
     model_selection=0, min_detection_confidence=0.5) as face_detection:
   while cap.isOpened():
+    #resize
+    image=cv2.resize(image,(700,500))
     success, image = cap.read()
     if not success:
       print("Ignoring empty camera frame")
