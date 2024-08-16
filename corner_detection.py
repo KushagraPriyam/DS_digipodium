@@ -30,14 +30,7 @@ while cam.isOpened():
         result=cv2.dilate(result,None)
         frame[result>0.01*frame.max()]=[0,0,255]
     except:
-        h,w,_=frame.shape
-        cv2.rectangle(
-            img=frame,
-            pt1=(100,100),
-            pt2=(w-100,h-100),
-            color=(255,255,255),
-            thickness=1
-        )
+        pass
     
     cv2.imshow('result',frame)
     if cv2.waitKey(1)==ord('q'):
